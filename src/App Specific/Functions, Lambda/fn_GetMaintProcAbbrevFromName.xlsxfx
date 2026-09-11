@@ -1,0 +1,33 @@
+=LAMBDA(
+  pMaintProcName,
+  LET(
+    _functionName,
+    N(
+      "fn_GetMaintProcAbbrevFromName"
+    ),
+    _comment,
+    N(
+      "Get the abbreviated name for the specified ski maintenance procedure."
+    ),
+    _result,
+    SWITCH(
+      LOWER(
+        pMaintProcName
+      ),
+      LOWER(
+        "Edges"
+      ),
+      "E",
+      LOWER(
+        "Full Tune"
+      ),
+      "FT",
+      LOWER(
+        "Wax"
+      ),
+      "W",
+      "Not Defined"
+    ),
+    _result
+  )
+)

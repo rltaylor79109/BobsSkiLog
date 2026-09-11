@@ -1,0 +1,37 @@
+=LAMBDA(
+  pSkiIdxPlusMainProcAbbrev,
+  LET(
+    _functionName,
+    N(
+      "fn_Get20252026EosSkiMaintDoneByProcAbbrev"
+    ),
+    _comment,
+    N(
+      "Gets the 2025-2026 end of season maintenance was done value for the specified maintenance procedure."
+    ),
+    _result,
+    Switch(
+      pSkiIdxPlusMainProcAbbrev,
+      "1W",
+      tbl_2025_2026_EOS[1W_Done],
+      "1E",
+      tbl_2025_2026_EOS[1E_Done],
+      "1FT",
+      tbl_2025_2026_EOS[1FT_Done],
+      "2W",
+      tbl_2025_2026_EOS[2W_Done],
+      "2E",
+      tbl_2025_2026_EOS[2E_Done],
+      "2FT",
+      tbl_2025_2026_EOS[2FT_Done],
+      "3W",
+      tbl_2025_2026_EOS[3W_Done],
+      "3E",
+      tbl_2025_2026_EOS[3E_Done],
+      "3FT",
+      tbl_2025_2026_EOS[3FT_Done],
+      c_NOT_FOUND
+    ),
+    _result
+  )
+)

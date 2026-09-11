@@ -1,0 +1,32 @@
+=LAMBDA(
+  pSkiName,
+  Let(
+    _functionName,
+    N(
+      "fn_GetSkiIdxFromSkiName"
+    ),
+    _comment,
+    N(
+      "Get the ski index specified by ski name."
+    ),
+    _lookup_value,
+    pSkiName,
+    _lookup_array,
+    tbl_Skis[Name],
+    _return_array,
+    tbl_Skis[Index],
+    _if_not_found,
+    c_NOT_FOUND,
+    _match_mode,
+    0,
+    _result,
+    XLOOKUP(
+      _lookup_value,
+      _lookup_array,
+      _return_array,
+      _if_not_found,
+      _match_mode
+    ),
+    _result
+  )
+)

@@ -1,0 +1,19 @@
+=LAMBDA(
+  pSkiIdx,
+  Let(
+    _functionName,
+    N(
+      "fn_GetSkiNameFromSkiIdx"
+    ),
+    _comment,
+    N(
+      "Get the ski name specified by ski index."
+    ),
+    _result,
+    index(
+      tbl_Skis[Name],
+      pSkiIdx
+    ),
+    _result
+  )
+)

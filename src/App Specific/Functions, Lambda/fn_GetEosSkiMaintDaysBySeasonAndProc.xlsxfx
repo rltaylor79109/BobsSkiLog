@@ -1,0 +1,44 @@
+=LAMBDA(
+  pSkiSeasonName,
+  pSkiIdxPlusMainProcAbbrev,
+  LET(
+    _functionName,
+    N(
+      "fn_GetEosSkiMaintDaysBySeasonAndProc"
+    ),
+    _comment,
+    N(
+      "Gets the end of season days since last maintenance performed for the specified maintenance procedure and season."
+    ),
+    _result,
+    Switch(
+      pSkiSeasonName,
+      "2024-2025",
+      fn_Get20242025EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      "2025-2026",
+      fn_Get20252026EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      "2026-2027",
+      fn_Get20262027EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      "2027-2028",
+      fn_Get20272028EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      "2028-2029",
+      fn_Get20282029EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      "2029-2030",
+      fn_Get20292030EosSkiMaintDaysByProcAbbrev(
+        pSkiIdxPlusMainProcAbbrev
+      ),
+      c_NOT_FOUND
+    ),
+    _result
+  )
+)

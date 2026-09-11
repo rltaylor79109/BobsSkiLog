@@ -1,0 +1,24 @@
+=LAMBDA(
+  pSeasonName,
+  pSkiName,
+  LET(
+    _functionName,
+    N(
+      "fn_GetDaysSkiUsedCountBySeasonNameAndSkiName"
+    ),
+    _comment,
+    N(
+      "Gets the count of days the specified ski was used during the specified season."
+    ),
+    _col,
+    fn_GetTblSeasonDaysColSkiBySeasonName(
+      pSeasonName
+    ),
+    _result,
+    COUNTIF(
+      _col,
+      pSkiName
+    ),
+    _result
+  )
+)

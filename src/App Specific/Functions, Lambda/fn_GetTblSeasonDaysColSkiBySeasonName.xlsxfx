@@ -1,0 +1,41 @@
+=LAMBDA(
+  pSeasonName,
+  LET(
+    _functionName,
+    N(
+      "fn_GetTblSeasonDaysColSkiBySeasonName"
+    ),
+    _comment,
+    N(
+      "Gets the ski column from the Days table for the specified season."
+    ),
+    _result,
+    Switch(
+      lower(
+        pSeasonName
+      ),
+      lower(
+        "2025-2026"
+      ),
+      tbl_2025_2026_Days[Ski],
+      lower(
+        "2026-2027"
+      ),
+      tbl_2026_2027_Days[Ski],
+      lower(
+        "2027-2028"
+      ),
+      tbl_2027_2028_Days[Ski],
+      lower(
+        "2028-2029"
+      ),
+      tbl_2028_2029_Days[Ski],
+      lower(
+        "2029-2030"
+      ),
+      tbl_2028_2029_Days[Ski],
+      c_NOT_FOUND
+    ),
+    _result
+  )
+)

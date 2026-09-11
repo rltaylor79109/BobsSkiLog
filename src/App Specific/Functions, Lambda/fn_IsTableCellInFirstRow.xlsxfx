@@ -1,0 +1,23 @@
+=LAMBDA(
+  pCellRef,
+  pTableColRef,
+  LET(
+    _functionName,
+    N(
+      "fn_IsTableCellInFirstRow"
+    ),
+    _comment,
+    N(
+      "Determines if the specified cell is in the first row of the specified table."
+    ),
+    _result,
+    ROW(
+      pCellRef
+    ) = MIN(
+      ROW(
+        pTableColRef
+      )
+    ),
+    _result
+  )
+)

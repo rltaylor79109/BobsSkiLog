@@ -1,0 +1,30 @@
+=LAMBDA(
+  pCurSeasonName,
+  LET(
+    _functionName,
+    N(
+      "fn_GetPriorSeasonName"
+    ),
+    _comment,
+    N(
+      "Gets name of the season the precedes the current season specified by name."
+    ),
+    _currentStartYear,
+    LEFT(
+      pCurSeasonName,
+      4
+    ),
+    _currentEndYear,
+    RIGHT(
+      pCurSeasonName,
+      4
+    ),
+    _priorYearStart,
+    _currentStartYear - 1,
+    _priorYearEnd,
+    _currentEndYear - 1,
+    _result,
+    _priorYearStart & "-" & _priorYearEnd,
+    _result
+  )
+)
