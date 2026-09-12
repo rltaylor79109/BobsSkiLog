@@ -48,25 +48,23 @@
       _lastEOSdone,
       pLastDoneVal
     ),
-    _unadjustedDays,
+    _prelimDays,
     IF(
       _useLastSeasonVals,
       _lastEOSdays,
       pLastDaysVal
     ),
-    _adjustmentVal,
+    _addForCurDaySkiMatch,
     IF(
       _rowAndProcSkiMatch,
       1,
       0
     ),
-    _adjustedDays,
-    _unadjustedDays + _adjustmentVal,
     _result,
     IF(
       _done,
-      0,
-      _adjustedDays
+      _addForCurDaySkiMatch,
+      _prelimDays + _addForCurDaySkiMatch
     ),
     _result
   )
